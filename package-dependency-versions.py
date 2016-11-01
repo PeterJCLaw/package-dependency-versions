@@ -24,7 +24,7 @@ def parse_dpkg_depends(depends):
     dependencies = []
 
     for name_version in depends.split(','):
-        name = name_version.strip().split(None, 1)[0]
+        name = name_version.strip().split(None, 1)[0].split(':', 1)[0]
         dependencies.append(name)
 
     return dependencies
